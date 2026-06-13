@@ -1,0 +1,42 @@
+﻿<Window x:Class="YTLoad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YTLoad"
+        mc:Ignorable="d"
+        Title="YouTube Video Downloader" Height="350" Width="550" 
+        WindowStartupLocation="CenterScreen" Background="#F5F5F5">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+            <TextBox x:Name="UrlTextBox" Width="380" Height="30" VerticalContentAlignment="Center" 
+                     Padding="5" ToolTip="Вставьте ссылку на YouTube видео"/>
+            <Button x:Name="DownloadButton" Content="Скачать" Width="110" Margin="10,0,0,0" 
+                    Click="DownloadButton_Click" Background="#FF4444" Foreground="White" FontWeight="Bold"/>
+        </StackPanel>
+
+        <TextBlock x:Name="StatusTextBlock" Grid.Row="1" Text="Готов к работе" 
+                   FontSize="14" Foreground="#555" Margin="0,0,0,10" TextWrapping="Wrap"/>
+
+        <Border Grid.Row="2" Background="White" CornerRadius="5" Padding="10" BorderBrush="#DDD" BorderThickness="1">
+            <StackPanel>
+                <TextBlock x:Name="TitleTextBlock" Text="Название: -" FontWeight="Bold" Margin="0,0,0,5" TextWrapping="Wrap"/>
+                <TextBlock x:Name="AuthorTextBlock" Text="Канал: -" Margin="0,0,0,5"/>
+                <TextBlock x:Name="DurationTextBlock" Text="Длительность: -" Margin="0,0,0,5"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="3" Margin="0,15,0,0">
+            <ProgressBar x:Name="DownloadProgressBar" Height="15" Minimum="0" Maximum="100"/>
+            <TextBlock x:Name="ProgressPercentageTextBlock" Text="0%" HorizontalAlignment="Center" Margin="0,2,0,0" FontSize="11"/>
+        </StackPanel>
+    </Grid>
+</Window>
