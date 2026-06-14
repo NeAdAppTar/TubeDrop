@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YTLoad"
         mc:Ignorable="d"
-        Title="TubeDrop" Height="380" Width="560" 
+        Title="TubeDrop" Height="380" Width="659" 
         WindowStartupLocation="CenterScreen" Background="#F3F3F3"
         FontFamily="Segoe UI Variable Display, Segoe UI, Arial">
 
@@ -75,16 +75,7 @@
             <Setter Property="Background" Value="#E5E5E5"/>
             <Setter Property="Foreground" Value="#0067B8"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ProgressBar">
-                        <Grid x:Name="TemplateRoot">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="3"/>
-                            <Border x:Name="PART_Indicator" Background="{TemplateBinding Foreground}" HorizontalAlignment="Left" CornerRadius="3"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Height" Value="4"/>
         </Style>
     </Window.Resources>
 
@@ -122,9 +113,10 @@
             </Border.Effect>
 
             <StackPanel VerticalAlignment="Center">
-                <TextBlock x:Name="TitleTextBlock" Text="Название: -" FontSize="15" FontWeight="SemiBold" Foreground="#1A1A1A" Margin="0,0,0,8" TextWrapping="Wrap"/>
-                <TextBlock x:Name="AuthorTextBlock" Text="Канал: -" FontSize="13" Foreground="#5D5D5D" Margin="0,0,0,4"/>
-                <TextBlock x:Name="DurationTextBlock" Text="Длительность: -" FontSize="13" Foreground="#5D5D5D"/>
+                <TextBlock x:Name="TitleTextBlock" Text="Название: " FontSize="15" FontWeight="SemiBold" Foreground="#1A1A1A" Margin="0,0,0,8" TextWrapping="Wrap"/>
+                <TextBlock x:Name="AuthorTextBlock" Text="Канал: " FontSize="13" Foreground="#5D5D5D" Margin="0,0,0,4"/>
+                <TextBlock x:Name="DurationTextBlock" Text="Длительность: " FontSize="13" Foreground="#5D5D5D"/>
+                <TextBlock x:Name="FormatTextBlock" Text="Формат: " FontSize="13" Foreground="#5D5D5D"/>
             </StackPanel>
         </Border>
 

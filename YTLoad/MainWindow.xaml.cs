@@ -37,7 +37,7 @@ namespace YTLoad
                 // скачивание ффмпега и yt-dlp при первом запуске
                 if (!File.Exists("yt-dlp.exe") || !File.Exists("ffmpeg.exe"))
                 {
-                    StatusTextBlock.Text = "Загрузка необходимых модулей...";
+                    StatusTextBlock.Text = "Загрузка необходимых модулей (при первом запуске)...";
                     await YoutubeDLSharp.Utils.DownloadBinaries();
                 }
 
@@ -49,6 +49,7 @@ namespace YTLoad
                     TitleTextBlock.Text = $"Название: {videoData.Data.Title}";
                     AuthorTextBlock.Text = $"Канал: {videoData.Data.Uploader}";
                     DurationTextBlock.Text = $"Просмотры: {videoData.Data.ViewCount}";
+                    FormatTextBlock.Text = $"Формат: {videoData.Data.Format}";
                 }
 
                 StatusTextBlock.Text = "Скачивание в максимальном качестве...";
@@ -76,7 +77,7 @@ namespace YTLoad
                 if (result.Success)
                 {
                     StatusTextBlock.Text = "Готово! Видео сохранено на Рабочий стол.";
-                    MessageBox.Show("Видео успешно скачано!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    // MessageBox.Show("Видео успешно скачано!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
@@ -86,7 +87,7 @@ namespace YTLoad
             }
             catch (Exception ex)
             {
-                StatusTextBlock.Text = "Критическая ошибка.";
+                StatusTextBlock.Text = "Ошибка.";
                 MessageBox.Show($"Произошел сбой: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
